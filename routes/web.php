@@ -8,9 +8,13 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SetupInitialBalanceController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('welcome');
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
+    return redirect()->route('login');
 });
 
 Route::middleware(['auth', 'guest.balance'])->group(function () {

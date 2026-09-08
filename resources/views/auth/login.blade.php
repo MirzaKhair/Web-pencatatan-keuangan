@@ -37,6 +37,15 @@
             </label>
         </div>
 
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">
+                Belum punya akun?
+                <a href="{{ route('register') }}" class="font-medium text-green-600 hover:text-green-500">
+                    Daftar
+                </a>
+            </p>
+        </div>
+
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" href="{{ route('password.request') }}">
