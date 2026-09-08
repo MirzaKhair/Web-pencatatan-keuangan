@@ -1,58 +1,62 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Web Pencatatan Keuangan
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi pencatatan keuangan berbasis web yang digunakan untuk membantu pengguna dalam mengelola dan memantau kondisi keuangan secara lebih terstruktur.
 
-## About Laravel
+## Tentang Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Web Pencatatan Keuangan merupakan aplikasi berbasis web yang memungkinkan pengguna mencatat transaksi pemasukan dan pengeluaran, mengelompokkan transaksi berdasarkan kategori, mengatur anggaran bulanan, serta melihat laporan keuangan.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Aplikasi ini dibuat untuk mempermudah proses pencatatan dan pemantauan keuangan tanpa harus melakukan pencatatan secara manual.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Fitur
 
-## Learning Laravel
+- Login dan Register
+- Dashboard keuangan
+- Pencatatan pemasukan
+- Pencatatan pengeluaran
+- Edit dan hapus transaksi
+- Kategori pemasukan dan pengeluaran
+- Anggaran bulanan
+- Laporan keuangan
+- Filter transaksi berdasarkan jenis dan tanggal
+- Ringkasan kondisi keuangan
+- Grafik keuangan
+- Responsive untuk desktop dan mobile
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Teknologi
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Laravel
+- PHP
+- MySQL
+- Tailwind CSS
+- Alpine.js
+- Vite
+- JavaScript
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## Tampilan
 
-## Agentic Development
+### Login
+<img width="1919" height="1079" alt="Screenshot 2026-09-08 153415" src="https://github.com/user-attachments/assets/c22fd2bc-b585-46a5-8f15-0d8bb302c73d" />
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Dashboard
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b11a5784-fa2c-4853-b764-b2ce45cca68f" />
+
+### Transaksi
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/ddc30829-b10c-46c6-874f-b2e496dc3e92" />
+
+### Anggaran
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/246e46bb-3e68-48bb-8ad3-9715e22028eb" />
+
+### Kategori
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/d3db2c0b-6719-4704-b726-e71153029482" />
+
+### Laporan
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/62a0f5f4-7363-48d5-9b06-7cdb7211d249" />
+
+
+## Instalasi
+
+Clone repository:
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+git clone https://github.com/MirzaKhair/Web-pencatatan-keuangan.git
