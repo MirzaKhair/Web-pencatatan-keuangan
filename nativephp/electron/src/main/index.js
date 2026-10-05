@@ -1,5 +1,5 @@
 import NativePHP from '#plugin';
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, Menu } from 'electron';
 import path from 'path';
 import { createSplash } from './splash.js';
 
@@ -21,6 +21,10 @@ const appPath = path.join(buildPath, 'app');
 let splashWindow;
 
 app.whenReady().then(() => {
+    if (process.platform !== 'darwin') {
+        Menu.setApplicationMenu(null);
+    }
+
     try {
         splashWindow = createSplash(appPath, import.meta.dirname);
     } catch (error) {
