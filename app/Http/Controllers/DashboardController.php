@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\SqlDate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
@@ -72,8 +73,8 @@ class DashboardController extends Controller
                 break;
             case 'week':
                 $query->whereBetween('transaction_date', [
-                    now()->startOfWeek(),
-                    now()->endOfWeek(),
+                    now()->startOfWeek()->toDateString(),
+                    now()->endOfWeek()->toDateString(),
                 ]);
                 break;
             case 'month':
@@ -93,34 +94,37 @@ class DashboardController extends Controller
         $query = $user->transactions()
             ->join('categories', 'transactions.category_id', '=', 'categories.id');
 
+        $connection = $user->getConnection();
+        $column = 'transactions.transaction_date';
+
         switch ($period) {
             case 'today':
-                $query->selectRaw("HOUR(transactions.transaction_date) as label")
+                $query->selectRaw(SqlDate::hour($connection, $column).' as label')
                     ->whereDate('transaction_date', today());
                 break;
             case 'week':
-                $query->selectRaw("DATE(transactions.transaction_date) as label")
+                $query->selectRaw("DATE({$column}) as label")
                     ->whereBetween('transaction_date', [
-                        now()->startOfWeek(),
-                        now()->endOfWeek(),
+                        now()->startOfWeek()->toDateString(),
+                        now()->endOfWeek()->toDateString(),
                     ]);
                 break;
             case 'month':
-                $query->selectRaw("DATE(transactions.transaction_date) as label")
+                $query->selectRaw("DATE({$column}) as label")
                     ->whereMonth('transaction_date', now()->month)
                     ->whereYear('transaction_date', now()->year);
                 break;
             case 'year':
-                $query->selectRaw("MONTH(transactions.transaction_date) as label")
+                $query->selectRaw(SqlDate::month($connection, $column).' as label')
                     ->whereYear('transaction_date', now()->year);
                 break;
             default:
-                $query->selectRaw("DATE_FORMAT(transactions.transaction_date, '%Y-%m') as label");
+                $query->selectRaw(SqlDate::yearMonth($connection, $column).' as label');
         }
 
         return $query
-            ->selectRaw("categories.type as category_type")
-            ->selectRaw("SUM(transactions.amount) as total")
+            ->selectRaw('categories.type as category_type')
+            ->selectRaw('SUM(transactions.amount) as total')
             ->groupBy('label', 'categories.type')
             ->orderBy('label')
             ->get();
