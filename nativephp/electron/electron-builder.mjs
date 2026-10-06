@@ -107,7 +107,9 @@ export default {
             : {}),
     },
     nsis: {
-        artifactName: appName + '-${version}-setup.${ext}',
+        oneClick: false,
+        allowToChangeInstallationDirectory: true,
+        artifactName: 'Pencatatan-Keuangan-${version}-setup.${ext}',
         shortcutName: '${productName}',
         uninstallDisplayName: '${productName}',
         createDesktopShortcut: 'always',
